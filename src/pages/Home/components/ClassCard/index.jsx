@@ -1,16 +1,23 @@
 import React from "react";
 import styles from "./styles.module.css";
+import banner from "../../../../assets/images/algoritma.png";
+import Button from "../../../../components/Button";
 
-const ClassCard = () => {
+const ClassCard = ({
+  name,
+  lecturer
+}) => {
   return (
     <div className={styles.container}>
+        <img src={banner} alt="gambar" />
+      
       <div>
-        <p>Gambar</p>
+        <p>Nama Kelas: {name}</p>
+        <p>Nama Dosen: {lecturer}</p>
       </div>
-      <div>
-        <p>Nama Kelas: Algoritma</p>
-        <p>Nama Dosen: Ni Nes</p>
-      </div>
+      <Button 
+        label="Detail"
+      />
     </div>
   )
 }
