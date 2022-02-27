@@ -1,4 +1,5 @@
 import { Button, Card, TextField } from "@mui/material";
+import { Box } from "@mui/system";
 import React from "react";
 import styles from "../styles.module.css";
 
@@ -45,6 +46,7 @@ const Register = () => {
           <Button className={styles.button} variant="contained">Register</Button>
         </div>
       </Card>
+      
   );
 };
 

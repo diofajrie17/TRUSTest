@@ -1,13 +1,21 @@
+import { Box } from "@mui/system";
 import React from "react";
 import Login from "./Login";
 import Register from "./Register";
+import styles from "./styles.module.css";
 
-const isRegistered = false
+const isRegistered = true
 
 const AuthPage = () => {
   return (
-      <div>
-        {isRegistered?(<Login/>):(<Register/>)}
+      <div className={styles.box}>
+      <Box 
+      sx={{
+        width:500
+      }}>
+      {isRegistered?(<Login/>):(<Register/>)}
+      </Box>
+        
       </div>
   );
 };
