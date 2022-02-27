@@ -2,7 +2,7 @@
   background-color: #dff9fb;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   max-width: 200px;
   border: 1px solid #535c68;
   padding: 10px;

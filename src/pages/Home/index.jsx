@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ClassCard from "./components/ClassCard";
-import { dataClass } from "./data";
+// import { dataClass } from "./data";
 import styles from "./styles.module.css";
+import axios from "axios";
 
 const Home = () => {
+  const [dataClass, setDataClass] = useState([]);
+
+  const getDataClass = () => {
+    axios
+      .get('https://warm-ravine-03466.herokuapp.com/subject')
+      .then((response) => {
+        console.log(response);
+        const myRepo = response.data;
+        setDataClass(myRepo);
+      });
+  };
+
+  useEffect(() => getDataClass(), []);
+
   const cardList = dataClass.map((data) => {
     return <ClassCard name={data.name} lecturer={data.lecturer} />;
   });
