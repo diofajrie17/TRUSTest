@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ClassCard from "./components/ClassCard";
+import styles from "./styles.module.css";
 import axios from "axios";
 
 const Home = () => {
