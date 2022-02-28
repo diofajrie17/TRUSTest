@@ -7,10 +7,15 @@ import axios from "axios";
 
 const Home = () => {
   const [dataClass, setDataClass] = useState([]);
-
+  const config = {
+    header: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+    },
+  };
   const getDataClass = () => {
     axios
-      .get('https://warm-ravine-03466.herokuapp.com/subject')
+      .get("https://warm-ravine-03466.herokuapp.com/subject", config)
       .then((response) => {
         console.log(response);
         const myRepo = response.data;
@@ -20,8 +25,8 @@ const Home = () => {
 
   useEffect(() => getDataClass(), []);
 
-  const cardList = dataClass.map((data) => {
-    return <ClassCard name={data.name} lecturer={data.lecturer} />;
+  const cardList = dataClass.map((sdata) => {
+    return <ClassCard name={sdata.name} lecturer={sdata.lecturer} />;
   });
   return (
     <div>
